@@ -1,7 +1,7 @@
-name: VUnit Tests
+name: VUnit
 on: [push, pull_request]
 jobs:
-  test:
+  VUnit_Tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,3 +11,10 @@ jobs:
       - uses: VUnit/vunit_action@master
         with:
           cmd: python3 ./run.py -x test_result.xml
+      - name: Publish VUnit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: test_result.xml
+          check_name: VUnit Test Results
+          check_run_annotations: all tests, skipped tests
