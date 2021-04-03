@@ -2,6 +2,7 @@ name: VUnit
 on: [push, pull_request]
 jobs:
   VUnit_Tests:
+    name: VUnit Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
