@@ -18,6 +18,9 @@ begin
 
       elsif run("Test that passes 2") then
         check_true(true);
+
+      elsif run("Test in PR that passes after correction") then
+        check_true(true);
       end if;
     end loop;
 
