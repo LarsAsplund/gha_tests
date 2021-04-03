@@ -16,8 +16,8 @@ begin
       if run("Test that passes") then
         check_true(true);
 
-      elsif run("Test that fails") then
-        check_true(false);
+      elsif run("Test that passes 2") then
+        check_true(true);
       end if;
     end loop;
 
